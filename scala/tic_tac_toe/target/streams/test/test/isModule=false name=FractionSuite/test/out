@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0m[32mFractionSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Fractions should be equal if they share a numerator and a denominator[0m[0m
+[0m[[0minfo[0m] [0m[32m- Fractions should reduce correctly[0m[0m
+[0m[[0minfo[0m] [0m[32m- Fractions should add correctly[0m[0m
+[0m[[0minfo[0m] [0m[32m- Fraction should multiply correctly[0m[0m
+[0m[[0minfo[0m] [0m[32m- Fractions should be not change value when their numerator and[0m[0m
+[0m[[0minfo[0m] [0m[32m  denominator are negated[0m[0m

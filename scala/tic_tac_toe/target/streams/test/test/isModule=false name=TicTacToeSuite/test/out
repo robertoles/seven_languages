@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m[32mTicTacToeSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Starting a game displays welcome message[0m[0m
+[0m[[0minfo[0m] [0m[32m- Claiming an unselected cell sets a X[0m[0m
+[0m[[0minfo[0m] [0m[32m- Claiming an unselected cell switches the player[0m[0m
