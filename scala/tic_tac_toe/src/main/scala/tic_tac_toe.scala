@@ -13,9 +13,11 @@ class TicTacToe {
   }
 
   def claim(selection:Int) {
-    board = board.map { case `selection` => 10; case x => x }
-    player = "O"
+    var unclaimed_count = board.count { _  == selection }
+    if (unclaimed_count != 0) {
+      var player_number = if (player == "X") 10 else 11
+      board = board.map { case `selection` => player_number; case x => x }
+      player = if (player == "X") "O" else "X"
+    }
   }
-
-
 }
