@@ -45,7 +45,7 @@ class TicTacToeSuite extends FunSuite {
         game.board = List(10, 2, 3, 4, 5, 6, 7, 8, 9)
         game.player = "O"
         game.claim(1)
-        assert(game.board == List(10, 2, 3, 4, 5, 6, 7, 8, 9))
+        assert(game.board === List(10, 2, 3, 4, 5, 6, 7, 8, 9))
     }
 
     test("When claiming a selected cell the current player doesnt change") {
@@ -53,7 +53,16 @@ class TicTacToeSuite extends FunSuite {
         game.board = List(10, 2, 3, 4, 5, 6, 7, 8, 9)
         game.player = "O"
         game.claim(1)
-        assert(game.player == "O")
+        assert(game.player === "O")
+    }
+
+    test("When X claims the top row the winner is set to X") {
+        var game = new TicTacToe()
+        game.board = List(10, 10, 3, 4, 5, 6, 7, 8, 9)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(3)
+        assert(game.winner === "X")
     }
 
 }
