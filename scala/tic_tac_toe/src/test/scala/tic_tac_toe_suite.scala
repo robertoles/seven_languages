@@ -26,6 +26,15 @@ class TicTacToeSuite extends FunSuite {
         assert(game.board === List(1, 11, 3, 4, 5, 6, 7, 8, 9))
     }
 
+    test("Claiming an unselected cell which doesnt result in a win doensnt set the winner") {
+        var game = new TicTacToe()
+        game.board = List(1, 2, 3, 4, 5, 6, 7, 10, 9)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(9)
+        assert(game.winner === "")
+    }
+
     test("When current player is X, claiming an unselected cell switches current player to O") {
         var game = new TicTacToe()
         game.player = "X"
@@ -62,6 +71,33 @@ class TicTacToeSuite extends FunSuite {
         game.player = "X"
         assert(game.winner === "")
         game.claim(3)
+        assert(game.winner === "X")
+    }
+
+    test("When O claims the top row the winner is set to O") {
+        var game = new TicTacToe()
+        game.board = List(11, 11, 3, 4, 5, 6, 7, 8, 9)
+        game.player = "O"
+        assert(game.winner === "")
+        game.claim(3)
+        assert(game.winner === "O")
+    }
+
+    test("When X claims the middle row the winner is set to X") {
+        var game = new TicTacToe()
+        game.board = List(1, 2, 3, 10, 10, 6, 7, 8, 9)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(6)
+        assert(game.winner === "X")
+    }
+
+    test("When X claims the bottom row the winner is set to X") {
+        var game = new TicTacToe()
+        game.board = List(1, 2, 3, 4, 5, 6, 10, 10, 9)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(9)
         assert(game.winner === "X")
     }
 
