@@ -31,6 +31,7 @@ class Cell {
   def claimedBy(targetPlayer: String):Boolean = { player == targetPlayer }
 
   def row():Int = { ((index-1) / 3).floor.toInt }
+  def column():Int = { index % 3 }
 }
 
 class TicTacToe {
@@ -51,7 +52,7 @@ class TicTacToe {
     // check if row is a winner
     
 
-    if (isWinningRow) {
+    if (isWinningRow || isWinningColumn) {
       winner = player
     }
 
@@ -93,6 +94,15 @@ class TicTacToe {
         row => row._2.forall { 
           cell => cell.claimedBy(player) 
       } 
+    }
+  }
+
+  def isWinningColumn():Boolean = {
+    board.groupBy{ _.column }
+    .exists {
+      column => column._2.forall {
+        cell => cell.claimedBy(player)
+      }
     }
   }
 }

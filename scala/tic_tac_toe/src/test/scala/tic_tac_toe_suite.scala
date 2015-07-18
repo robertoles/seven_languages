@@ -117,14 +117,40 @@ class TicTacToeSuite extends FunSuite {
         game.claim(9)
         assert(game.winner === "X")
     }
-/*
+
     test("When X claims the first column the winner is set to X") {
         var game = new TicTacToe()
-        game.board = List(10, 2, 3, 10, 5, 6, 7, 8, 9)
+        game.player = "X"
+        game.claim(1)
+        game.player = "X"
+        game.claim(4)
         game.player = "X"
         assert(game.winner === "")
         game.claim(7)
         assert(game.winner === "X")
     }
-*/
+
+    test("When X claims the second column the winner is set to X") {
+        var game = new TicTacToe()
+        game.player = "X"
+        game.claim(2)
+        game.player = "X"
+        game.claim(5)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(8)
+        assert(game.winner === "X")
+    }
+
+    test("When X claims the third column the winner is set to X") {
+        var game = new TicTacToe()
+        game.player = "X"
+        game.claim(3)
+        game.player = "X"
+        game.claim(6)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(9)
+        assert(game.winner === "X")
+    }
 }
