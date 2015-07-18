@@ -153,4 +153,28 @@ class TicTacToeSuite extends FunSuite {
         game.claim(9)
         assert(game.winner === "X")
     }
+
+    test("When X claims the right leaning diagonal the winner is set to X") {
+        var game = new TicTacToe()
+        game.player = "X"
+        game.claim(3)
+        game.player = "X"
+        game.claim(5)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(7)
+        assert(game.winner === "X")
+    }
+
+    test("When X claims the left leaning diagonal the winner is set to X") {
+        var game = new TicTacToe()
+        game.player = "X"
+        game.claim(1)
+        game.player = "X"
+        game.claim(5)
+        game.player = "X"
+        assert(game.winner === "")
+        game.claim(9)
+        assert(game.winner === "X")
+    }
 }

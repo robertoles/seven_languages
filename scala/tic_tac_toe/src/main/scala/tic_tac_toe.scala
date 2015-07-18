@@ -52,7 +52,7 @@ class TicTacToe {
     // check if row is a winner
     
 
-    if (isWinningRow || isWinningColumn) {
+    if (isWinningRow || isWinningColumn || isWinningDiagonal) {
       winner = player
     }
 
@@ -104,5 +104,17 @@ class TicTacToe {
         cell => cell.claimedBy(player)
       }
     }
+  }
+
+  def isWinningDiagonal():Boolean = {
+    var right_diagonal = List(3,5,7).map(x => getCell(x))
+    var right_result = right_diagonal.forall {
+      cell => cell.claimedBy(player)
+    }
+    var left_diagonal = List(1,5,9).map(x => getCell(x))
+    var left_result = left_diagonal.forall {
+      cell => cell.claimedBy(player)
+    }
+    right_result || left_result
   }
 }
